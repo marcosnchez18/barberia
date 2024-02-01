@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/barberia.css">
+    <title>Sobre nosotros</title>
+</head>
+
+<body>
+    <header>
+        <div class="tooltip">
+            <img class="logo" src="../imagenes/logo.png" alt="Logo">
+            <span class="tooltiptext">Bienvenido a la mejor barbería de Sanlúcar de Barrameda, <br> esperamos que tenga
+                una gran experiencia de la mano <br> de nuestros profesionales.</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
+                <li><a href="mis_citas.html">Mis citas</a></li>
+                <li><a href="contacto.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="rulo-ca">
+        <div class="carrusel-container">
+            <div class="carrusel" id="carrusel">
+                <div class="carrusel-item"><img class="carrusel-img" src="../imagenes/ca1.png" alt="Imagen 1"></div>
+                <div class="carrusel-item"><img class="carrusel-img" src="../imagenes/ca2.png" alt="Imagen 2"></div>
+                <div class="carrusel-item"><img class="carrusel-img" src="../imagenes/ca3.png" alt="Imagen 3"></div>
+                <div class="carrusel-item"><img class="carrusel-img" src="../imagenes/ca4.png" alt="Imagen 4"></div>
+            </div>
+            <div class="carrusel-indicadores" id="indicadores"></div>
+        </div>
+
+        <div class="tabs_nav">
+            <div class="tab">
+                <input type="radio" name="tabs" id="t1" checked>
+                <label for="t1">Cortes</label>
+                <div>Cortes con estilo de la mano de los mejores profesionales, pídenos consejos, estamos para ayudarte.
+                </div>
+            </div>
+            <div class="tab">
+                <input type="radio" name="tabs" id="t2">
+                <label for="t2">Barba</label>
+                <div>Somos la empresa líder en la barba del hombre, contamos con las mejores navajas italianas.</div>
+            </div>
+            <div class="tab">
+                <input type="radio" name="tabs" id="t3">
+                <label for="t3">Cejas</label>
+                <div>No te olvides de dejar a punto tus cejas, son una parte muy importante de tu rostro.</div>
+            </div>
+            <div class="tab">
+                <input type="radio" name="tabs" id="t4">
+                <label for="t4">Estilo</label>
+                <div>Cuidaremos tu cabello para que permanezca sano y brillante.</div>
+            </div>
+        </div>
+
+
+        <script>
+            let diap_act = 0;
+
+            function mostrar_diapositiva(indice) {
+                const carrusel = document.getElementById('carrusel');
+                const tot_diapositivas = document.querySelectorAll('.carrusel-item').length;
+
+                if (indice >= tot_diapositivas) {
+                    diap_act = 0;
+                } else if (indice < 0) {
+                    diap_act = tot_diapositivas - 1;
+                } else {
+                    diap_act = indice;
+                }
+
+                const valor_trad = -diap_act * 100 + '%';
+                carrusel.style.transform = 'translateX(' + valor_trad + ')';
+                act_ind();
+            }
+
+            function crear_indice(indice) {
+                const cont_ind = document.getElementById('indicadores');
+                const indicador = document.createElement('div');
+                indicador.classList.add('carrusel-indicador');
+                indicador.setAttribute('data-indice', indice);
+                indicador.addEventListener('click', () => mostrar_diapositiva(indice));
+                cont_ind.appendChild(indicador);
+            }
+
+            function act_ind() {
+                const indicadores = document.querySelectorAll('.carrusel-indicador');
+                indicadores.forEach((indicador, indice) => {
+                    if (indice === diap_act) {
+                        indicador.classList.add('activo');
+                    } else {
+                        indicador.classList.remove('activo');
+                    }
+                });
+            }
+
+            function siguiente_slide() {
+                mostrar_diapositiva(diap_act + 1);
+            }
+
+            for (let i = 0; i < document.querySelectorAll('.carrusel-item').length; i++) {
+                crear_indice(i);
+            }
+
+            setInterval(siguiente_slide, 2000);
+        </script>
+    </section>
+
+    <section class="sec">
+        <div class="picture-container">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../imagenes/responsive_pequeña.jpg">
+                <source media="(min-width: 1200px)" srcset="../imagenes/responsive.jpg">
+                <source srcset="../imagenes/responsive.jpg">
+    
+                <img class="pic" src="../imagenes/responsive.jpg" alt="rres">
+            </picture>
+        </div>
+    </section>
+
+
+
+    <section class="cabildo-ser">
+        <div class="acordeon">
+            <div class="acordeon-elemento">
+                <div class="acordeon-cabecera" onclick="alt_acordeon('elemento1')">¿Quiénes Somos?</div>
+                <div class="acordeon-contenido" id="elemento1">
+                    <p>Somos una barbería con años de experiencia, comprometidos con ofrecer servicios de calidad para
+                        nuestros clientes. Nuestro equipo de barberos expertos está dedicado a brindarle una experiencia
+                        de cuidado personalizada.</p>
+                </div>
+            </div>
+
+            <div class="acordeon-elemento">
+                <div class="acordeon-cabecera" onclick="alt_acordeon('elemento2')">¿Por qué Elegirnos?</div>
+                <div class="acordeon-contenido" id="elemento2">
+                    <p>En nuestra barbería, nos esforzamos por la excelencia en cada corte y servicio que ofrecemos.
+                        Utilizamos productos de alta calidad y seguimos las últimas tendencias en el mundo del cuidado
+                        del cabello masculino. Tu satisfacción es nuestra prioridad.</p>
+                </div>
+            </div>
+
+            <div class="acordeon-elemento">
+                <div class="acordeon-cabecera" onclick="alt_acordeon('elemento3')">Servicios</div>
+                <div class="acordeon-contenido" id="elemento3">
+                    <p>Ofrecemos una variedad de servicios de barbería, desde cortes de cabello clásicos hasta afeitados
+                        y tratamientos de cuidado del cabello. Nuestros profesionales están capacitados para brindarte
+                        el mejor servicio y garantizar que te veas y te sientas genial.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script>
+            function alt_acordeon(elemento_id) {
+                var elemento = document.getElementById(elemento_id);
+                if (elemento.style.display === "block") {
+                    elemento.style.display = "none";
+                } else {
+                    elemento.style.display = "block";
+                }
+            }
+        </script>
+
+    </section>
+
+    <section class="galeria">
+        <div class="gallery">
+            <div class="image-g" onclick="abrir_galeria('../imagenes/x1.jpg')">
+                <img src="../imagenes/x1.jpg" alt="Image 1">
+            </div>
+            <div class="image-g" onclick="abrir_galeria('../imagenes/x2.jpg')">
+                <img src="../imagenes/x2.jpg" alt="Image 2">
+            </div>
+            <div class="image-g" onclick="abrir_galeria('../imagenes/x3.jpg')">
+                <img src="../imagenes/x3.jpg" alt="Image 3">
+            </div>
+        </div>
+
+        <div id="lightbox" class="hidden">
+            <span class="close" onclick="cerrar_galeria()">❌</span>
+            <img id="lightbox-image">
+        </div>
+
+        <script>
+            function abrir_galeria(im) {
+                document.getElementById('lightbox-image').src = im;
+                document.getElementById('lightbox').style.display = 'flex';
+            }
+
+            function cerrar_galeria() {
+                document.getElementById('lightbox').style.display = 'none';
+            }
+        </script>
+    </section>
+
+
+    <section class="fin_home">
+        <div>
+            <img class="logo_fin" src="../imagenes/logo.png" alt="logo_fin">
+            <p class="dir">Calle Ancha, 43, Sanlúcar de Bda(11540), Cádiz</p>
+            <p class="dir">+34 622541527 +34 956 56 78 32</p>
+            <p class="dir">info@barber18@barbershop.com <br>
+                barbersanlucar@gmail.com</p>
+            <br><br><br>
+            <hr>
+            <br><br><br>
+            <img class="rrss" src="../imagenes/rrss.png" alt="logo_fin">
+        </div>
+        <br><br><br><br>
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quiénes somos</h3>
+            </div>
+            <div class="footer-section">
+                <h3>Contactos</h3>
+            </div>
+            <div class="footer-section">
+                <h3>Política de cookies</h3>
+            </div>
+            <div class="footer-section">
+                <h3>Política de privacidad</h3>
+            </div>
+        </div>
+        <div class="footer-developer">
+            <p>Desarrollado por Marco Sánchez</p>
+            <link rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img class="licencia" alt="Licencia Creative Commons"
+                src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+        </div>
+    </footer>
+</body>
+
+</html>
