@@ -1150,3 +1150,44 @@ img.licencia {
     font-family: 'Neuton';
     font-size: 20px;
 }
+
+
+.rulo-form {
+    position: relative;
+    height: auto; /* Cambiado de 270vh a auto para ajustarse al contenido */
+    width: 100%;
+    color: rgb(2, 1, 1);
+    font-family: 'Neuton';
+    display: flex;
+    flex-direction: column; /* Cambiado de row a column para hacerlo vertical */
+    align-items: center;
+    padding: 20px; /* Añadido un padding para mejorar la apariencia */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Añadido un poco de estilo para mejorar la apariencia */
+form {
+    max-width: 400px; /* Limita el ancho del formulario para una mejor legibilidad */
+    width: 100%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.sub {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
