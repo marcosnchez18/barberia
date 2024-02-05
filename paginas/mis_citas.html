@@ -32,32 +32,47 @@
         <h2>Mis Datos</h2>
         <br><br><br><br>
         <form action="mailto:barbers18sanlucar@barbershop.com" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre"  placeholder="Nombre">
-
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido"  placeholder="Apellido">
-
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono"  placeholder="Teléfono">
-
-            <label for="dni">DNI:</label>
-            <input type="text" id="dni" name="dni"  placeholder="DNI">
-
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
-
-            <label for="lugarNacimiento">Lugar de Nacimiento:</label>
-            <input type="text" id="lugarNacimiento" name="lugarNacimiento"  placeholder="Ciudad">
-
-            <label for="comunidadAutonoma">Comunidad Autónoma:</label>
-            <input type="text" id="comunidadAutonoma" name="comunidadAutonoma" placeholder="C.A" required>
-
-            <label for="datosInteres">Datos de Interés:</label>
-            <textarea id="datosInteres" name="datosInteres" rows="4" placeholder="Introduzca su información" required></textarea>
-
-            <input class="sub" type="submit"></button>
+            <fieldset>
+                <legend>Información Personal</legend>
+        
+                <label for="nombre">Nombre:*</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" aria-required="true" autocomplete="given-name">
+        
+                <label for="apellido">Apellido:*</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" aria-required="true" autocomplete="family-name">
+        
+                <label for="telefono">Teléfono:*</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" aria-required="true" autocomplete="tel">
+        
+                <label for="dni">DNI:*</label>
+                <input type="text" id="dni" name="dni" placeholder="DNI" aria-required="true" autocomplete="national-id">
+            </fieldset>
+        
+            <fieldset>
+                <legend>Dirección</legend>
+        
+                <label for="direccion">Dirección:*</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Dirección" required aria-required="true" autocomplete="address-line1">
+        
+                <label for="lugarNacimiento">Lugar de Nacimiento:</label>
+                <input type="text" id="lugarNacimiento" name="lugarNacimiento" placeholder="Ciudad" autocomplete="address-level2">
+        
+                <label for="comunidadAutonoma">Comunidad Autónoma:*</label>
+                <input type="text" id="comunidadAutonoma" name="comunidadAutonoma" placeholder="C.A" required aria-required="true" autocomplete="address-level1">
+            </fieldset>
+        
+            <fieldset>
+                <legend>Datos de Interés</legend>
+        
+                <label for="datosInteres">Datos de Interés:*</label>
+                <textarea id="datosInteres" name="datosInteres" rows="4" placeholder="Introduzca su información" required aria-required="true" autocomplete="off"></textarea>
+            </fieldset>
+        
+            <input class="sub" type="submit">
         </form>
+        
+        
+        
         <br><br><br>
     </section>
 
