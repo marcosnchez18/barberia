@@ -128,35 +128,27 @@
 
 
     <section class="cabildo-ser">
-        <div class="acordeon">
+        <div class="acordeon" role="tablist">
             <div class="acordeon-elemento">
-                <div class="acordeon-cabecera" onclick="alt_acordeon('elemento1')">¿Quiénes Somos?</div>
-                <div class="acordeon-contenido" id="elemento1">
-                    <p>Somos una barbería con años de experiencia, comprometidos con ofrecer servicios de calidad para
-                        nuestros clientes. Nuestro equipo de barberos expertos está dedicado a brindarle una experiencia
-                        de cuidado personalizada.</p>
+                <div class="acordeon-cabecera" role="tab" aria-controls="elemento1" aria-expanded="false" onclick="alt_acordeon('elemento1')">¿Quiénes Somos?</div>
+                <div class="acordeon-contenido" id="elemento1" role="tabpanel" hidden>
+                    <p>Somos una barbería con años de experiencia, comprometidos con ofrecer servicios de calidad para nuestros clientes. Nuestro equipo de barberos expertos está dedicado a brindarle una experiencia de cuidado personalizada.</p>
                 </div>
             </div>
-
+        
             <div class="acordeon-elemento">
-                <div class="acordeon-cabecera" onclick="alt_acordeon('elemento2')">¿Por qué Elegirnos?</div>
-                <div class="acordeon-contenido" id="elemento2">
-                    <p>En nuestra barbería, nos esforzamos por la excelencia en cada corte y servicio que ofrecemos.
-                        Utilizamos productos de alta calidad y seguimos las últimas tendencias en el mundo del cuidado
-                        del cabello masculino. Tu satisfacción es nuestra prioridad.</p>
+                <div class="acordeon-cabecera" role="tab" aria-controls="elemento2" aria-expanded="false" onclick="alt_acordeon('elemento2')">¿Por qué Elegirnos?</div>
+                <div class="acordeon-contenido" id="elemento2" role="tabpanel" hidden>
+                    <p>En nuestra barbería, nos esforzamos por la excelencia en cada corte y servicio que ofrecemos. Utilizamos productos de alta calidad y seguimos las últimas tendencias en el mundo del cuidado del cabello masculino. Tu satisfacción es nuestra prioridad.</p>
                 </div>
             </div>
-
+        
             <div class="acordeon-elemento">
-                <div class="acordeon-cabecera" onclick="alt_acordeon('elemento3')">Servicios</div>
-                <div class="acordeon-contenido" id="elemento3">
-                    <p>Ofrecemos una variedad de servicios de barbería, desde cortes de cabello clásicos hasta afeitados
-                        y tratamientos de cuidado del cabello. Nuestros profesionales están capacitados para brindarte
-                        el mejor servicio y garantizar que te veas y te sientas genial.</p>
+                <div class="acordeon-cabecera" role="tab" aria-controls="elemento3" aria-expanded="false" onclick="alt_acordeon('elemento3')">Servicios</div>
+                <div class="acordeon-contenido" id="elemento3" role="tabpanel" hidden>
+                    <p>Ofrecemos una variedad de servicios de barbería, desde cortes de cabello clásicos hasta afeitados y tratamientos de cuidado del cabello. Nuestros profesionales están capacitados para brindarte el mejor servicio y garantizar que te veas y te sientas genial.</p>
                 </div>
             </div>
-
-
         </div>
 
         <script>
