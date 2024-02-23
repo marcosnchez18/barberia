@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/barberia.css">
-    <title>Mis citas</title>
+    <title>Mis datos</title>
 </head>
 
 <body>
@@ -19,8 +19,8 @@
             <ul>
                 <li><a href="../home.html" aria-label="Home">Home</a></li>
                 <li><a href="mis_citas.html" aria-label="Pedir cita">Pedir cita</a></li>
-                <li><a href="mis_citas.html" aria-label="Mis citas">Mis citas</a></li>
                 <li><a href="contacto.html#contacto" aria-label="Contacto">Contacto</a></li>
+                <li><a href="mis_citas.html" aria-label="Mis datos">Mis datos</a></li>
             </ul>
         </nav>
     </header>
@@ -53,10 +53,6 @@
         
                 <label for="direccion">Dirección:*</label>
                 <input type="text" id="direccion" name="direccion" placeholder="Dirección" required aria-required="true" autocomplete="address-line1">
-        
-                <label for="lugarNacimiento">Lugar de Nacimiento:</label>
-                <input type="text" id="lugarNacimiento" name="lugarNacimiento" placeholder="Ciudad" autocomplete="address-level2">
-        
                 <label for="comunidadAutonoma">Comunidad Autónoma:*</label>
                 <input type="text" id="comunidadAutonoma" name="comunidadAutonoma" placeholder="C.A" required aria-required="true" autocomplete="address-level1">
             </fieldset>
@@ -65,7 +61,7 @@
                 <legend>Datos de Interés</legend>
         
                 <label for="datosInteres">Datos de Interés:*</label>
-                <textarea id="datosInteres" name="datosInteres" rows="4" placeholder="Introduzca su información" required aria-required="true" autocomplete="off"></textarea>
+                <textarea id="datosInteres" name="datosInteres" rows="4" placeholder="¿Qué necesitamos saber de tí?, gustos, cortes favoritos..." required aria-required="true" autocomplete="off"></textarea>
             </fieldset>
         
             <input class="sub" type="submit">
